@@ -1,0 +1,44 @@
+<view class="container">
+  <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item >
+        <image src="{{item}}" class="slide-image" width="100%" 
+        bindtap="clickSwiper" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="text-title">
+    <view class="line_flag"></view>
+    <text>分类精选</text>
+  </view>
+  <view class="index-nav">
+        <block wx:for-items="{{navs}}" wx:key="{{index}}">
+            <view class="l-c-c" 
+            bindtap="clickNav" >
+                <image src="{{item.image}}" class="slide-image"/>
+                 <view>{{item.text}}</view>
+            </view>
+           
+        </block>
+    </view>
+  <view class="text-title">
+    <view class="line_flag"></view>
+    <text>精品推荐</text>
+  </view>
+  <view class="newest">
+    <view class="newest-box">
+    <view wx:for="{{showData}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+      <view class="newest-list" bindtap="clickList" >
+          <view class="limage">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="info">
+            <text class="title">{{item.title}}</text>
+            <text class="desc">{{item.desc}}</text>
+            <text class="price">{{item.price}}</text>
+          </view>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

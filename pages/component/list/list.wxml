@@ -1,0 +1,19 @@
+<view class="container">
+
+<view class="newest">
+    <view class="newest-box">
+    <view wx:for="{{showData}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+      <view class="newest-list" bindtap="clickList" >
+          <view class="limage">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="info">
+            <text class="title">{{item.title}}</text>
+            <text class="desc">{{item.desc}}</text>
+            <text class="price">{{item.price}}</text>
+          </view>
+      </view>
+      </view>
+    </view>
+  </view>
+    </view>

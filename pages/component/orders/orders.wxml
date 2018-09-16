@@ -1,0 +1,44 @@
+<view class="main">
+  <view class="section">
+    <view class="addre1" bindtap="toChooseAddress" style="display:{{display1}} ">
+      <view class="left">
+        <image src="/image/map.jpg" mode="widthFix" />
+        <text class="red">　选择您的地址</text>
+      </view>
+      <view class="right">
+        <image class="more" src="/image/right.png" mode="widthFix" />
+      </view>
+    </view>
+    <view class="addre1 addre2" bindtap="toChooseAddress" style="display:{{display2}} ">
+      <view class="left">
+        <view class="left_top">
+          <image src="/image/map2.png" mode="widthFix" /> {{name}}　{{tel}}
+          <text class="area">{{area}} ㎡</text>
+        </view>
+        <view class="left_bottom">
+          地址：{{addre}}
+        </view>
+      </view>
+      <view class="right">
+        <image class="more" src="/image/right.png" mode="widthFix" />
+      </view>
+    </view>
+    <view class="line">
+      <image src="/image/line.jpg" mode="aspectFit" repeat="repeat" />
+    </view>
+  </view>
+
+  <view class="orders-box">
+    <view wx:for="{{orders}}" wx:key="index" class="orders-list">
+      <image class="orders-thumb" src="{{item.image}}"></image>
+      <view class="orders-pro-name">{{item.title}}</view>
+      <view class="orders-pro-price">￥{{item.price}}</view>
+      <view class="orders-count-num">×{{item.num}}</view>
+    </view>
+  </view>
+
+  <view class="orders-footer">
+    <view class="orders-footer-total">付款合计：￥{{total}}</view>
+    <view class="orders-footer-btn" bindtap="toPay">去付款</view>
+  </view>
+</view>
